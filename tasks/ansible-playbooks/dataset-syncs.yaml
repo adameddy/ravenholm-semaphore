@@ -4,7 +4,6 @@
   tasks:
     - name: Copy md1 to md0
       become: true
-      tags: sync-pull
-      synchronize:
-        src: "/mnt/md2/temp"
-        dest: "/mnt/sd2/temp"
+      ansible.posix.synchronize:
+        src: /mnt/md2/temp
+        dest: /mnt/sd2/temp
