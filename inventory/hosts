@@ -1,8 +1,8 @@
-[fs-prod-1]
+[fs_prod_1]
 10.0.0.10
 
-[pve-prod-1]
+[pve_prod_1]
 10.0.0.30
 
-[pve-prod-2]
+[pve_prod_2]
 10.0.0.20

@@ -1,6 +1,6 @@
 ---
 - name: Hello World
-  hosts: fs-prod-1
+  hosts: fs_prod_1
   tasks:
-  	- name: Print message
+    - name: Print message
       shell: echo "Hey guys!"
