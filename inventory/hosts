@@ -1,6 +1,8 @@
-[file servers]
+[fs-prod-1]
 10.0.0.10
 
-[proxmox servers]
-10.0.0.20
+[pve-prod-1]
 10.0.0.30
+
+[pve-prod-2]
+10.0.0.20

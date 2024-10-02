@@ -1,0 +1,6 @@
+---
+- name: Hello World
+  hosts: fs-prod-1
+  tasks:
+  	- name: Print message
+      shell: echo "Hey guys!"
