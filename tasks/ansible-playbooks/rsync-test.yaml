@@ -1,8 +1,0 @@
----
-- name: rsync test
-  hosts: fs_prod_1
-  become: true
-
-  tasks:
-    - name: rsync test
-      shell: rsync -avh --exclude 'lost+found' /mnt/md1/ /mnt/sd1

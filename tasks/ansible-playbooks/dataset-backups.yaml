@@ -1,0 +1,14 @@
+---
+- name: Dataset Backups
+  hosts: fs_prod_1
+  become: true
+
+  tasks:
+    - name: md1 to md0
+      shell: rsync -avh --exclude 'lost+found' /mnt/md1/ /mnt/md0
+    - name: md1 to sd1
+      shell: rsync -avh --exclude 'lost+found' /mnt/md1/ /mnt/sd1
+    - name: md2 to md0
+      shell: rsync -avh --exclude 'lost+found' /mnt/md2/ /mnt/md0
+    - name: md2 to sd2
+      shell: rsync -avh --exclude 'lost+found' /mnt/md2/ /mnt/sd2
