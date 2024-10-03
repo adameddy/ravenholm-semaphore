@@ -1,10 +1,7 @@
 ---
 - name: Dataset Syncs
   hosts: fs_prod_1
-  become: yes
-  become_user: root
-  become_method: su
-  become_exe: sudo su -
+  become: true
 
   tasks:
     - name: Copy md1 to md0
