@@ -3,6 +3,7 @@
   hosts: fs_prod_1
   become: true
   become_method: sudo
+  become_user: root
 
   tasks:
     - name: Copy md1 to md0
