@@ -1,0 +1,8 @@
+---
+- name: rsync test
+  hosts: fs_prod_1
+  become: true
+
+  tasks:
+    - name: rsync test
+      shell: rsync -avh /mnt/md2/temp/ /mnt/sd2/temp
