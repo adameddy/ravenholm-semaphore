@@ -1,6 +1,8 @@
 ---
 - name: Hello World
   hosts: fs_prod_1
+  become: true
+
   tasks:
     - name: Print message
-      shell: echo "Hey guys!"
+      shell: echo $USER
