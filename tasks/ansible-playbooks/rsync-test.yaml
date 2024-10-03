@@ -5,4 +5,4 @@
 
   tasks:
     - name: rsync test
-      shell: rsync -avh /mnt/md2/temp/ /mnt/sd2/temp
+      shell: rsync -avh --exclude 'lost+found' /mnt/md1/ /mnt/sd1
