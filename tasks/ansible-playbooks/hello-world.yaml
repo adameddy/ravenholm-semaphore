@@ -5,4 +5,4 @@
 
   tasks:
     - name: Print message
-      shell: echo "Hello"
+      shell: echo "Hello $USER"
