@@ -2,7 +2,7 @@
 - name: Dataset Syncs
   hosts: fs_prod_1
   become: yes
-  become_user: adam
+  become_user: root
   become_method: su
   become_exe: sudo su -
 
