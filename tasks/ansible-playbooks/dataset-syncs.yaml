@@ -2,9 +2,14 @@
 - name: Dataset Syncs
   hosts: fs_prod_1
   become: true
-  become_method: su
 
   tasks:
+    - name: Install additional packages
+      apt:
+        name:
+          - sudo
+          - acl
+        state: present
     - name: Copy md1 to md0
       ansible.posix.synchronize:
         src: /mnt/md2/temp
