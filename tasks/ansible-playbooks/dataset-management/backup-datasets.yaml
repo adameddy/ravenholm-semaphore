@@ -5,6 +5,9 @@
 
   vars:
     log: "/mnt/md2/other/logs/{{ ansible_play_name }}_$(date +'%Y%m%d').log"
+    excludes:
+      - 'lost+found'
+      - '/mnt/md2/proxmox/containers'
 
   tasks:
     - name: md1 to md0
@@ -12,6 +15,6 @@
     - name: md1 to sd1
       shell: "rsync -avh --exclude 'lost+found' /mnt/md1/ /mnt/sd1 --log-file={{ log }}"
     - name: md2 to md0
-      shell: "rsync -avh --exclude 'lost+found' /mnt/md2/ /mnt/md0 --log-file={{ log }}"
+      shell: "rsync -avh --exclude={{ excludes }} /mnt/md2/ /mnt/md0 --log-file={{ log }}"
     - name: md2 to sd2
       shell: "rsync -avh --exclude 'lost+found' /mnt/md2/ /mnt/sd2 --log-file={{ log }}"
