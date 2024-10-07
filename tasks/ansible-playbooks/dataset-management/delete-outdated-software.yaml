@@ -1,5 +1,5 @@
 ---
-- name: Delete Outdated Software
+- name: Delete_Outdated_Software
   hosts: fs_prod_1
   become: true
 
