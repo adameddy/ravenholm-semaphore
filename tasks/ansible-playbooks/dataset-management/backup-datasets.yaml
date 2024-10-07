@@ -4,7 +4,7 @@
   become: true
 
   vars:
-    log: "/mnt/md2/other/logs/{{ ansible_play_name }}_$(date +'%s').log"
+    log: "/mnt/md2/other/logs/{{ ansible_play_name }}_$(date +'%Y%m%d').log"
 
   tasks:
     - name: md1 to md0
