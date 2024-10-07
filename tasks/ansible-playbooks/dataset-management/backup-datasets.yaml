@@ -1,5 +1,5 @@
 ---
-- name: Backup Datasets
+- name: backup_datasets
   hosts: fs_prod_1
   become: true
 

@@ -1,17 +1,17 @@
 ---
-- name: Delete_Outdated_Software
+- name: delete_outdated_software
   hosts: fs_prod_1
   become: true
 
   vars:
     base_cmd: "rsync -v --recursive --delete --ignore-existing --existing --prune-empty-dirs"
-    log: "/mnt/md2/other/logs/{{ ansible_play_name }}_$(date +'%Y%m%d_%H%M%S').log"
+    log: "/mnt/md2/other/logs/{{ ansible_play_name }}_$(date +'%s').log"
     src: /mnt/md1/software/
     dest:
       - /mnt/md0/software/
       - /mnt/sd1/software/
 
   tasks:
-    - name: "Delete from {{ item }}"
+    - name: "delete from {{ item }}"
       shell: "{{ base_cmd }} {{ src }} {{ item }} --log-file={{ log }}"
       loop: "{{ dest }}"
