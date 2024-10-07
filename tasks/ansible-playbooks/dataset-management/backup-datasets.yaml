@@ -5,7 +5,7 @@
 
   vars:
     log: "/mnt/md2/other/logs/{{ ansible_play_name }}_$(date +'%Y%m%d').log"
-    exclude: "{'lost+found','/mnt/md2/proxmox/containers'}"
+    exclude: "{'lost+found','proxmox/containers'}"
 
   tasks:
     - name: md1 to md0
