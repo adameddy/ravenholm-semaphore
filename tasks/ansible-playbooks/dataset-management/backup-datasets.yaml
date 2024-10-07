@@ -8,10 +8,10 @@
 
   tasks:
     - name: md1 to md0
-      shell: "rsync -avh --exclude={'lost+found'} /mnt/md1/ /mnt/md0 --log-file={{ log }}"
+      shell: "rsync -avh --exclude 'lost+found' /mnt/md1/ /mnt/md0 --log-file={{ log }}"
     - name: md1 to sd1
-      shell: "rsync -avh --exclude={'lost+found'} /mnt/md1/ /mnt/sd1 --log-file={{ log }}"
+      shell: "rsync -avh --exclude 'lost+found' /mnt/md1/ /mnt/sd1 --log-file={{ log }}"
     - name: md2 to md0
-      shell: "rsync -avh --exclude={'lost+found','proxmox/containers'} /mnt/md2/ /mnt/md0 --log-file={{ log }}"
+      shell: "rsync -avh --exclude 'lost+found' --exclude 'proxmox/containers' /mnt/md2/ /mnt/md0 --log-file={{ log }}"
     - name: md2 to sd2
-      shell: "rsync -avh --exclude={'lost+found','proxmox/containers'} /mnt/md2/ /mnt/sd2 --log-file={{ log }}"
+      shell: "rsync -avh --exclude 'lost+found' --exclude 'proxmox/containers' /mnt/md2/ /mnt/sd2 --log-file={{ log }}"
