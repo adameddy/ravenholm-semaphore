@@ -1,8 +1,0 @@
----
-- name: Delete Outdated Audio
-  hosts: fs_prod_1
-  become: true
-
-  tasks:
-    - name: Delete outdated audio from sd2
-      shell: rsync -avh --delete /mnt/md2/frostmourne/ /mnt/sd2/frostmourne/

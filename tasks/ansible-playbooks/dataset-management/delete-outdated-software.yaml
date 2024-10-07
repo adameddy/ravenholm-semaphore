@@ -1,0 +1,16 @@
+---
+- name: Delete Outdated Software
+  hosts: fs_prod_1
+  become: true
+
+  vars:
+    base_cmd: "rsync --recursive --delete --ignore-existing --existing --prune-empty-dirs"
+    src: /mnt/md1/software/
+    dest:
+      - /mnt/md0/software/
+      - /mnt/sd1/software/
+
+  tasks:
+    - name: "Delete from {{ item }}"
+      shell: "{{ base_cmd }} {{ src }} {{ item }}"
+      loop: "{{ dest }}"
