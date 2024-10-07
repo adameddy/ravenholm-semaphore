@@ -5,7 +5,7 @@
 
   vars:
     base_cmd: "rsync -v --recursive --delete --ignore-existing --existing --prune-empty-dirs"
-    log: "/mnt/md2/other/logs/{{ ansible_play_name }}/$(date +'%Y%m%d_%H%M%S').log"
+    log: "/mnt/md2/other/logs/{{ ansible_play_name }}.log"
     src: /mnt/md1/software/
     dest:
       - /mnt/md0/software/
