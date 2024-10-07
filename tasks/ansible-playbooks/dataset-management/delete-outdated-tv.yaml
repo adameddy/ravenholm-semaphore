@@ -1,0 +1,17 @@
+---
+- name: delete_outdated_tv
+  hosts: fs_prod_1
+  become: true
+
+  vars:
+    base_cmd: "rsync -v --recursive --delete --ignore-existing --existing --prune-empty-dirs"
+    log: "/mnt/md2/other/logs/{{ ansible_play_name }}_$(date +'%s').log"
+    src: /mnt/md1/tv/
+    dest:
+      - /mnt/md0/tv/
+      - /mnt/sd1/tv/
+
+  tasks:
+    - name: "delete from {{ item }}"
+      shell: "{{ base_cmd }} {{ src }} {{ item }} --log-file={{ log }}"
+      loop: "{{ dest }}"

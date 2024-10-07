@@ -1,0 +1,17 @@
+---
+- name: delete_outdated_users
+  hosts: fs_prod_1
+  become: true
+
+  vars:
+    base_cmd: "rsync -v --recursive --delete --ignore-existing --existing --prune-empty-dirs"
+    log: "/mnt/md2/other/logs/{{ ansible_play_name }}_$(date +'%s').log"
+    src: /mnt/md2/users/
+    dest:
+      - /mnt/md0/users/
+      - /mnt/sd2/users/
+
+  tasks:
+    - name: "delete from {{ item }}"
+      shell: "{{ base_cmd }} {{ src }} {{ item }} --log-file={{ log }}"
+      loop: "{{ dest }}"
