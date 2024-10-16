@@ -1,7 +1,7 @@
 ---
 - name: backup_users_to_mega
   hosts: fs_prod_1
-  become: true
+  become: false
 
   vars:
     log: "/mnt/md2/other/logs/{{ ansible_play_name }}_$(date +'%Y%m%d').log"
