@@ -1,0 +1,11 @@
+---
+- name: backup_users_to_mega
+  hosts: fs_prod_1
+  become: true
+
+  vars:
+    log: "/mnt/md2/other/logs/{{ ansible_play_name }}_$(date +'%Y%m%d').log"
+
+  tasks:
+    - name: users to mega cloud storage
+      shell: "rclone sync /mnt/md2/users/Adam/Documents/test/ megaEncrypt: -v --log-file={{ log }}"
